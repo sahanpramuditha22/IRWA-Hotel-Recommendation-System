@@ -120,7 +120,7 @@ function Register() {
       />
       <Select
         placeholder="Select Country"
-        value={country}
+        value={country || undefined}
         onChange={(value) => setCountry(value)}
         style={{ width: '100%', marginBottom: '10px' }}
       >
@@ -132,7 +132,7 @@ function Register() {
       </Select>
       <Select
         placeholder="Select City"
-        value={city}
+        value={city || undefined}
         onChange={(value) => setCity(value)}
         style={{ width: '100%', marginBottom: '10px' }}
         disabled={!country} // Disable city selection until a country is selected
@@ -158,7 +158,7 @@ function Register() {
                 <Card
                   hoverable
                   title={hotel.hotelname}
-                  cover={<img alt="hotel" src={hotel.imageUrl || 'default-hotel-image.jpg'} />}
+                  onClick={() => window.open(`https://www.booking.com/searchresults.html?ss=${encodeURIComponent(hotel.hotel)}`, "_blank")}
                 >
                   <Meta description={hotel.roomtype} />
                 </Card>

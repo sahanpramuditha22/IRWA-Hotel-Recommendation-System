@@ -55,7 +55,7 @@ calc()
 
 
 
-# Function to search hotels based on requirements
+
 def requirementbased(city, number, features):
     hotel['city'] = hotel['city'].str.lower()
     hotel['roomamenities'] = hotel['roomamenities'].str.lower()
